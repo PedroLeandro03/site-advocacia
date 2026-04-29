@@ -45,8 +45,20 @@
     .btn-light:hover { background: var(--cinza-claro); color: var(--verde-escuro); }
 
     .header-photo-section { background: var(--branco); padding: 0; border-bottom: 1px solid #e6e1d8; }
-    .header-photo-frame { width: 100%; overflow: hidden; background: var(--cinza-claro); }
-    .header-photo-frame img { width: 100%; height: auto; display: block; object-fit: contain; object-position: center; }
+.header-photo-frame {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  background: #000;
+}
+
+.header-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 15%; 
+  display: block;
+}
 
     .hero { min-height: 680px; display: grid; align-items: center; position: relative; overflow: hidden; background: linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.88) 48%, rgba(246,245,241,0.68) 100%), var(--cinza-claro); }
     .hero::after { content: ""; position: absolute; right: -150px; top: 120px; width: 420px; height: 420px; background: var(--verde); border-radius: 50%; opacity: 0.12; }
@@ -93,30 +105,33 @@
     .logo-lockup strong { font-family: var(--fonte-titulo); font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: 0.08em; line-height: 1; font-weight: 500; text-transform: uppercase; }
     .logo-lockup span { display: flex; align-items: center; gap: 1rem; margin-top: 0.6rem; font-family: var(--fonte-titulo); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 1rem; }
     .logo-lockup span::before, .logo-lockup span::after { content: ""; height: 1px; background: #999; flex: 1; }
-    .text-block p { color: var(--cinza); margin-bottom: 1rem; font-size: 1.05rem; }
-    .highlight-box { border-left: 4px solid var(--verde); background: var(--cinza-claro); padding: 1.3rem; border-radius: 0 18px 18px 0; margin-top: 1.5rem; color: var(--preto); }
+.text-block p {
+  color: var(--cinza);
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+
+  text-align: justify;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}    .highlight-box { border-left: 4px solid var(--verde); background: var(--cinza-claro); padding: 1.3rem; border-radius: 0 18px 18px 0; margin-top: 1.5rem; color: var(--preto); }
 
     .team, .services, .publications { background: var(--cinza-claro); }
     .founders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-bottom: 2rem; }
     .founder-card, .area-card, .service-card, .publication-card, .contact-card { background: var(--branco); border: 1px solid #e6e1d8; border-radius: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.04); }
     .founder-card { overflow: hidden; min-height: 100%; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .founder-card:hover, .area-card:hover, .service-card:hover, .publication-card:hover { transform: translateY(-4px); box-shadow: 0 24px 70px rgba(0,0,0,0.08); }
-    .founder-photo {
-  height: 420px;
-  background: linear-gradient(145deg, rgba(29,56,17,0.86), rgba(17,36,10,0.92)), var(--cinza-claro);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.founder-photo {
+  width: 100%;
+  height: 320px;
   overflow: hidden;
 }
-    
-    .founder-photo img {
+
+.founder-photo img {
   width: 100%;
-  height: 100%;
-  display: block;
+  height: 320px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%; /* 🔥 resolve todas */
+  display: block;
 }
     .header-photo-frame.image-error::after, .founder-photo.no-photo::after { content: attr(data-missing); position: relative; z-index: 2; color: rgba(255,255,255,0.84); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.78rem; text-align: center; padding: 1rem; }
     .header-photo-frame.image-error { min-height: 320px; display: flex; align-items: center; justify-content: center; }
@@ -267,3 +282,86 @@
       .logo-lockup { align-items: flex-start; }
       .logo-lockup strong { font-size: 2rem; }
     }
+.foto-joao {
+  object-position: center 20%;
+}
+
+.foto-lucas {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 5%; 
+}
+
+.foto-fabio {
+  object-position: center 20%;
+}
+
+/* ===== IMAGENS DA EQUIPE ===== */
+.founder-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+/* ajuste ESPECÍFICO do Lucas */
+.founder-card .foto-lucas {
+  object-position: center 0% !important;
+}
+
+
+
+nav ul li a {
+  position: relative;
+  transition: all 0.25s ease;
+  display: inline-block;
+  color: #222;
+}
+
+/* efeito de linha animada */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #1d3f1a;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1d3f1a;
+  transform: translateY(-3px);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.mapa {
+  margin-top: 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  display: block;
+}
+
+.contact-list .mapa {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.contact-list li {
+  margin-bottom: 1.2rem;
+}
+
+.mapa iframe {
+  border-radius: 12px;
+}
